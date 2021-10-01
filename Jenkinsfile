@@ -1,6 +1,6 @@
 node{
    stage('SCM Checkout'){
-     git 'https://github.com/damodaranj/my-app.git'
+     git 'https://github.com/iammagesh/my-app.git'
    }
    stage('Compile-Package'){
 
@@ -19,7 +19,7 @@ node{
    }
    stage('Docker Image Push'){
    withCredentials([string(credentialsId: 'dockerPass', variable: 'dockerPassword')]) {
-   sh "docker login -u saidamo -p ${dockerPassword}"
+   sh "docker login -u iammagesh -p ${dockerPassword}"
     }
    sh 'docker push saidamo/myweb:0.0.2'
    }
